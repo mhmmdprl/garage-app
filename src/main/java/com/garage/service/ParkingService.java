@@ -56,7 +56,7 @@ public class ParkingService {
             });
             return stringBuilder.toString();
         } else if (SLOTS.stream().anyMatch(slot -> slot.getParkVehicle() != null && plateOrTicketId.equals(slot.getParkVehicle().getPlate()))) {
-            stringBuilder = new StringBuilder();
+            stringBuilder = new StringBuilder("Vacant Slots : ");
             SLOTS.stream().filter(slot -> slot.getParkVehicle() != null && plateOrTicketId.equals(slot.getParkVehicle().getPlate())).forEach(slot -> {
                 stringBuilder.append(slot.getSlotNumber());
                 stringBuilder.append(" ");
